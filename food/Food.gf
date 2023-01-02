@@ -11,6 +11,7 @@ abstract Food = {
         QualityKind : Quality -> Kind -> Kind;
         Cheese, Bread, Wine, Chocolate : Kind;
         Very : Quality -> Quality;
+        VeryVery : Quality -> Quality;
         Fresh, Warm, Italian, Greek, Delicious : Quality;
         QuestionIs : Item -> Quality -> QuestionPhrase;
         ExcuseMe : Phrase -> ExcusePhrase;

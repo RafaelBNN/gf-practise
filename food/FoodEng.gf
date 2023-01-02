@@ -12,6 +12,7 @@ concrete FoodEng of Food = {
         Wine = {s = "wine"};
         Chocolate = {s = "chocolate"};
         Very quality = {s = "very" ++ quality.s};
+        VeryVery quality = {s = "very very" ++ quality.s};
         Fresh = {s = "fresh"};
         Warm = {s = "warm"};
         Italian = {s = "italian"};
