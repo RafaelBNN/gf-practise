@@ -1,0 +1,18 @@
+concrete FoodIta of Food = {
+  
+    lincat Phrase, Item, Kind, Quality = {s : Str};
+
+    lin
+        Is item quality = {s = item.s ++ "è" ++ quality.s};
+        This kind = {s = "questo" ++ kind.s};
+        That kind = {s = "quel" ++ kind.s};
+        QualityKind quality kind = {s = kind.s ++ quality.s};
+        Wine = {s = "vino"};
+        Cheese = {s = "formaggio"};
+        Fish = {s = "pesce"};
+        Very quality = {s = "molto" ++ quality.s};
+        Fresh = {s = "fresco"};
+        Warm = {s = "caldo"};
+        Italian = {s = "italiano"};
+        Delicious = {s = "delizioso"};
+}
