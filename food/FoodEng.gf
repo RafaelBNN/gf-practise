@@ -17,7 +17,7 @@ concrete FoodEng of Food = {
         Warm = {s = "warm"};
         Italian = {s = "italian"};
         Greek = {s = "greek"};
-        Delicious = {s = "delicious" | "exquisit" | "tasty"};
+        Delicious = {s = "delicious" | "exquisit" | "tasty" | "yummy"};
         QuestionIs item quality = {s = "is" ++ item.s ++ quality.s};
         ExcuseMe phrase = {s = "excuse me but" ++ phrase.s};
 }

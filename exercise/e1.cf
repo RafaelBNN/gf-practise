@@ -1,0 +1,5 @@
+Double.     DoublePhrase::= Phrase " " Phrase; -- ele ta entendendo como se fossem dois argumentos diferentes
+AddA.       Phrase      ::= Phrase "A";
+AddB.       Phrase      ::= Phrase "B";
+A.          Phrase      ::= "A";
+B.          Phrase      ::= "B";

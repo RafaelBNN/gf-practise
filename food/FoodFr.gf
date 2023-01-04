@@ -9,7 +9,7 @@ concrete FoodFr of Food = {
         QualityKind quality kind = {s = kind.s ++ quality.s};
         Wine = {s = "vin"};
         Cheese = {s = "fromage"};
-        Fish = {s = "poisson"};
+        Bread = {s = variants{}};
         Very quality = {s = "très" ++ quality.s};
         Fresh = {s = "fraîche"};
         Warm = {s = "chaude"};
