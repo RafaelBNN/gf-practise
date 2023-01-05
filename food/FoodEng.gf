@@ -1,6 +1,6 @@
 concrete FoodEng of Food = {
 
-    lincat Phrase, Quality, Item, Kind, QuestionPhrase, ExcusePhrase = {s : Str};
+    lincat Phrase, Quality, Item, Kind, Drink = {s : Str};
 
     lin
         Is item quality = {s = item.s ++ "is" ++ quality.s};
@@ -18,6 +18,4 @@ concrete FoodEng of Food = {
         Italian = {s = "italian"};
         Greek = {s = "greek"};
         Delicious = {s = "delicious" | "exquisit" | "tasty" | "yummy"};
-        QuestionIs item quality = {s = "is" ++ item.s ++ quality.s};
-        ExcuseMe phrase = {s = "excuse me but" ++ phrase.s};
 }

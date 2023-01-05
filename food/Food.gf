@@ -1,18 +1,16 @@
 -- a food grammar
-abstract Food = {
+abstract Food = Drink ** {
 
     flags startcat = Phrase;
 
-    cat Phrase; Quality; Item; Kind; QuestionPhrase; ExcusePhrase;
+    cat Phrase; Quality; Item; Kind;
 
     fun
         Is : Item -> Quality -> Phrase;
         This, That : Kind -> Item;
         QualityKind : Quality -> Kind -> Kind;
-        Cheese, Bread, Wine, Chocolate : Kind;
+        Cheese, Bread, Chocolate : Kind;
         Very : Quality -> Quality;
         VeryVery : Quality -> Quality;
         Fresh, Warm, Italian, Greek, Delicious : Quality;
-        QuestionIs : Item -> Quality -> QuestionPhrase;
-        ExcuseMe : Phrase -> ExcusePhrase;
 }
