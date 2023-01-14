@@ -1,16 +1,35 @@
 concrete FoodEng of Food = {
 
-    lincat Phrase, Quality, Item, Kind, Drink = {s : Str};
+    param Number = Sg | Pl;
+
+    lincat Phrase, Quality, Item, Drink = {s : Str};
+    lincat Kind = {s : Number => Str};
 
     lin
         Is item quality = {s = item.s ++ "is" ++ quality.s};
-        This kind = {s = "this" ++ kind.s};
-        That kind = {s = "that" ++ kind.s};
-        QualityKind quality kind = {s = quality.s ++ kind.s};
-        Cheese = {s = "cheese"};
-        Bread = {s = "bread"};
+        -- This kind = {s = table {
+        --     Sg => "this" ++ kind.s!Sg;
+        --     Pl => "that" ++ kind.s!Pl
+        -- }};
+        -- This kind = {s = "this" ++ kind.s};
+        -- That kind = {s = "that" ++ kind.s};
+        QualityKind quality kind = {s = table {
+            Sg => quality.s ++ kind.s!Sg;
+            Pl => quality.s ++ kind.s!Pl
+        }};
+        Cheese = {s = table {
+            Sg => "cheese";
+            Pl => "cheeses"
+        }};
+        Bread = {s = table {
+            Sg => "bread";
+            Pl => "breads"
+        }};
+        Chocolate = {s = table {
+            Sg => "chocolate";
+            Pl => "chocolates"
+        }};
         Wine = {s = "wine"};
-        Chocolate = {s = "chocolate"};
         Very quality = {s = "very" ++ quality.s};
         VeryVery quality = {s = "very very" ++ quality.s};
         Fresh = {s = "fresh"};
