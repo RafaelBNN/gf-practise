@@ -29,4 +29,38 @@ resource ResourcePt = {
         }
     };
 
+    oper verboReg2aConjug : Str -> {s : Pessoa => Numero => Str} = \com -> {
+        s = table {
+            Pri => table{
+                Sg => com + "o";
+                Pl => com + "emos"
+            };
+            Seg => table{
+                Sg => com + "es";
+                Pl => com + "eis"
+            };
+            Ter => table{
+                Sg => com + "e";
+                Pl => com + "em"
+            }
+        }
+    };
+
+    oper verboReg3aConjug : Str -> {s : Pessoa => Numero => Str} = \abr -> {
+        s = table {
+            Pri => table{
+                Sg => abr + "o";
+                Pl => abr + "imos"
+            };
+            Seg => table{
+                Sg => abr + "es";''
+                Pl => abr + "is"
+            };
+            Ter => table{
+                Sg => abr + "e";
+                Pl => abr + "em"
+            }
+        }
+    };
+
 }
