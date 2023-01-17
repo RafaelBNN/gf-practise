@@ -3,7 +3,6 @@ resource ResourcePt = {
 
     param Numero = Sg | Pl;
     param Pessoa = Pri | Seg | Ter;
-    -- param VerbForm = VPresent Number | VPast | VPastPart | VPresPart;
     
     oper substReg : Str -> {s : Numero => Str} = \cachorro -> {
         s = table {
@@ -12,55 +11,63 @@ resource ResourcePt = {
         }
     };
 
-    oper verboReg1aConjug : Str -> {s : Pessoa => Numero => Str} = \fal -> {
-        s = table {
-            Pri => table{
-                Sg => fal + "o";
-                Pl => fal + "amos"
-            };
-            Seg => table{
-                Sg => fal + "as";
-                Pl => fal + "ais"
-            };
-            Ter => table{
-                Sg => fal + "a";
-                Pl => fal + "am"
-            }
+    oper verboReg : Str -> {s : Pessoa => Numero => Str} = \verbo -> {
+            radical + "ar"    =>  table {
+                            Pri => table{
+                                Sg => radical + "o";
+                                Pl => radical + "amos"
+                            };
+                            Seg => table{
+                                Sg => radical + "as";
+                                Pl => radical + "ais"
+                            };
+                            Ter => table{
+                                Sg => radical + "a";
+                                Pl => radical + "am"
+                            }
+                        };
+            radical + "er"    =>  table {
+                            Pri => table{
+                                Sg => radical + "o";
+                                Pl => radical + "emos"
+                            };
+                            Seg => table{
+                                Sg => radical + "es";
+                                Pl => radical + "eis"
+                            };
+                            Ter => table{
+                                Sg => radical + "e";
+                                Pl => radical + "em"
+                            }
+                        };
+            radical + "ir"    =>  table {
+                            Pri => table{
+                                Sg => radical + "o";
+                                Pl => radical + "imos"
+                            };
+                            Seg => table{
+                                Sg => radical + "es";
+                                Pl => radical + "is"
+                            };
+                            Ter => table{
+                                Sg => radical + "e";
+                                Pl => radical + "em"
+                            }
+                        };
+            _           =>  table {
+                            Pri => table{
+                                Sg => "por favor digite um verbo regular terminado em -ar, -er ou -ir";
+                                Pl => "por favor digite um verbo regular terminado em -ar, -er ou -ir"
+                            };
+                            Seg => table{
+                                Sg => "por favor digite um verbo regular terminado em -ar, -er ou -ir";
+                                Pl => "por favor digite um verbo regular terminado em -ar, -er ou -ir"
+                            };
+                            Ter => table{
+                                Sg => "por favor digite um verbo regular terminado em -ar, -er ou -ir";
+                                Pl => "por favor digite um verbo regular terminado em -ar, -er ou -ir"
+                            }
+                        }
         }
     };
-
-    oper verboReg2aConjug : Str -> {s : Pessoa => Numero => Str} = \com -> {
-        s = table {
-            Pri => table{
-                Sg => com + "o";
-                Pl => com + "emos"
-            };
-            Seg => table{
-                Sg => com + "es";
-                Pl => com + "eis"
-            };
-            Ter => table{
-                Sg => com + "e";
-                Pl => com + "em"
-            }
-        }
-    };
-
-    oper verboReg3aConjug : Str -> {s : Pessoa => Numero => Str} = \abr -> {
-        s = table {
-            Pri => table{
-                Sg => abr + "o";
-                Pl => abr + "imos"
-            };
-            Seg => table{
-                Sg => abr + "es";''
-                Pl => abr + "is"
-            };
-            Ter => table{
-                Sg => abr + "e";
-                Pl => abr + "em"
-            }
-        }
-    };
-
 }
