@@ -5,7 +5,7 @@ concrete VerbEng of Verb = open ResourcePt in {
     -- param Person = Pri | Seg | Ter;
 
     lincat Phrase = {s : Str};
-    lincat Subject = {s : Str ; p : Person ; n : Number ; g : Gender};
+    lincat Subject = {s : Str ; p : Person ; n : Number ; g : Gender}; -- errado!
     lincat Verb = {s : Person => Number => Str};
 
     lin
